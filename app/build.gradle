@@ -5,12 +5,14 @@ plugins {
     id "io.realm.kotlin" version "1.10.2"
 }
 
+apply plugin: "realm-android"
+
 android {
-    namespace 'com.forune.rabbit.app.camerasanddoors'
+    namespace 'com.exaple.camerasanddoorsapp'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.forune.rabbit.app.camerasanddoors"
+        applicationId "com.exaple.camerasanddoorsapp"
         minSdk 27
         targetSdk 33
         versionCode 1
