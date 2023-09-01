@@ -3,8 +3,9 @@ package com.forune.rabbit.app.camerasanddoors.data.use_case
 import com.forune.rabbit.app.camerasanddoors.domain.model.Camera
 import com.forune.rabbit.app.camerasanddoors.domain.repository.CameraRepository
 import kotlinx.coroutines.flow.Flow
+import javax.inject.Inject
 
-class LoadCameraUseCase(
+class LoadCameraUseCase @Inject constructor(
     private val repository: CameraRepository
 ) {
 

@@ -2,8 +2,9 @@ package com.forune.rabbit.app.camerasanddoors.data.mappers
 
 import com.forune.rabbit.app.camerasanddoors.data.database.model.DoorDbModel
 import com.forune.rabbit.app.camerasanddoors.domain.model.Door
+import javax.inject.Inject
 
-class DoorDbModelMapToDoor : (DoorDbModel) -> Door {
+class DoorDbModelMapToDoor @Inject constructor() : (DoorDbModel) -> Door {
 
     override fun invoke(value: DoorDbModel): Door =
         with(value) {

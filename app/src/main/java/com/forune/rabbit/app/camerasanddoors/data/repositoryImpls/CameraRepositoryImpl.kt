@@ -14,12 +14,13 @@ import io.realm.kotlin.Realm
 import io.realm.kotlin.ext.query
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class CamerasRepositoryImpl(
-    val realm: Realm,
-    val client: HttpClient,
-    val cameraDbModelMapToCamera: CameraDbModelMapToCamera,
-    val cameraMapToCameraDbModel: CameraMapToCameraDbModel
+class CamerasRepositoryImpl @Inject constructor(
+    private val realm: Realm,
+    private val client: HttpClient,
+    private val cameraDbModelMapToCamera: CameraDbModelMapToCamera,
+    private val cameraMapToCameraDbModel: CameraMapToCameraDbModel
 ) : CameraRepository {
 
     override suspend fun downloadCameras(): List<Camera> {

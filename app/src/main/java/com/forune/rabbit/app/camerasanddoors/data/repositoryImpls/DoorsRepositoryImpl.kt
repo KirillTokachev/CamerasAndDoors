@@ -15,8 +15,9 @@ import io.realm.kotlin.Realm
 import io.realm.kotlin.ext.query
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.map
+import javax.inject.Inject
 
-class DoorsRepositoryImpl(
+class DoorsRepositoryImpl @Inject constructor(
     val realm: Realm,
     val client: HttpClient,
     val doorMapToDoorDbModel: DoorMapToDoorDbModel,
