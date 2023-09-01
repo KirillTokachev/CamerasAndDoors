@@ -1,12 +1,13 @@
 package com.forune.rabbit.app.camerasanddoors.domain.repository
 
 import com.forune.rabbit.app.camerasanddoors.domain.model.Camera
+import kotlinx.coroutines.flow.Flow
 
 interface CameraRepository {
 
-    fun downloadCameras(): List<Camera>
+    suspend fun downloadCameras(): List<Camera>
 
-    fun loadCamera(): List<Camera>
-
-    fun rename(newName: String)
+    suspend fun loadCamera(): Flow<List<Camera>>
+    
+    suspend fun addCameraToFavorites(camera: Camera)
 }
